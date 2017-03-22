@@ -13,7 +13,9 @@ public class ConsumerServiceTest {
                 new ClassPathXmlApplicationContext(new String[]{"application.xml"});
         applicationContext.start();
         TestService testService = (TestService)applicationContext.getBean("testService");
+        ByeService byeService = (ByeService)applicationContext.getBean("byeService");
         System.out.println(testService.sayHello());
+        System.out.println(byeService.sayBye());
         try {
             System.in.read();
         } catch (IOException e) {

@@ -7,6 +7,7 @@
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 具体实现bean -->
     <bean id="testService" class="com.zhukm.dubbo.service.impl.TestServiceImpl" />
+    <bean id="byeService" class="com.zhukm.dubbo.service.impl.ByeServiceImpl" />
     <!-- 提供方信息,用于计算依赖关系 -->
     <dubbo:application name="provider" />
     <!-- 使用zookeeper注册中心暴露服务地址 -->
@@ -15,4 +16,5 @@
     <dubbo:protocol name="dubbo" port="28080" />
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.zhukm.dubbo.service.TestService" ref="testService" />
+    <dubbo:service interface="com.zhukm.dubbo.service.ByeService" ref="byeService" />
 </beans>
